@@ -33,6 +33,10 @@ const ToDoList = () => {
         setFeedback("");
         
     }
+
+    function DeleteTask(index) {
+        setTaske(t => t.filter((_, i) => i !== index));
+    }
     
     function EditTask(index) {
         const updatedName = prompt("Edit Task Name:", tasks[index].new);
@@ -106,7 +110,7 @@ const ToDoList = () => {
                 <button className='py-0.5 px-5 rounded text-lg bg-[#415a77] text-[#e0e1dd] cursor-pointer hover:bg-gray-900' onClick={() => EditTask(index)}>
                     Edit
                 </button>
-                <button className='py-0.5 px-5 rounded text-lg bg-[#e63946] hover:bg-red-600 text-white cursor-pointer' onClick={() => deleteTask(index)}>
+                <button className='py-0.5 px-5 rounded text-lg bg-[#e63946] hover:bg-red-600 text-white cursor-pointer' onClick={() => DeleteTask(index)}>
                     Delete
                 </button>
                 <p>{task.likes}</p>
